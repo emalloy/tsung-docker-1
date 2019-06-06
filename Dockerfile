@@ -1,11 +1,11 @@
-FROM ubuntu:14.04
+FROM ubuntu:xenial
 
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
 RUN apt-get dist-upgrade -y --no-install-recommends && \
-    apt-get install -y --no-install-recommends software-properties-common && \
+    apt-get install -y --no-install-recommends software-properties-common inetutils-ping && \
     add-apt-repository -y ppa:tsung/daily && \
     apt-get update && \
     apt-get install -y --no-install-recommends tsung
